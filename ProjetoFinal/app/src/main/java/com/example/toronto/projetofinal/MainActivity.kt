@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,8 +43,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View){
-
+        val lista = this.listaProd.listaItem.toString()
         val it = Intent(this, VerListaActivity::class.java)
+        it.putExtra("LISTA", lista)
         startActivityForResult(it, VerLista)
 
 
